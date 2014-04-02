@@ -11,11 +11,11 @@ end
 dep 'set-dock-magnification' do
   met? {
     shell?("defaults read com.apple.dock magnification") &&
-      shell("defaults read com.apple.dock magnification").to_i == 1
+      shell("defaults read com.apple.dock magnification").to_i == 0
   }
 
   meet {
-    shell("defaults write com.apple.dock magnification -integer 1")
+    shell("defaults write com.apple.dock magnification -integer 0")
   }
 end
 
